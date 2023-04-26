@@ -74,9 +74,28 @@ namespace csharp_lista_indirizzi
 		//CONSTRUCTOR
 		public Address(string name, string surname, string street, string city, string province, int zip)
 		{
-			if ((name == "") || (surname == "") || (street == "")) {
-				throw new Exception("Devi inserire un input valido");
+			if ((name == "") || (surname == "") || (street == ""))
+			{
+
+				string exceptionMessage = "Mancano i parametri ";
+				if (name == "")
+				{
+					exceptionMessage += "nome ";
+				}
+
+				if (surname == "")
+				{
+					exceptionMessage += "cognome ";
+				}
+
+				if (street == "")
+				{
+					exceptionMessage += "indirizzo ";
+				}
+
+				throw new Exception(exceptionMessage);
 			}
+
 			this.name = name;
 			this.surname = surname;
 			this.street = street;
