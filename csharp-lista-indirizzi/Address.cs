@@ -40,7 +40,7 @@ namespace csharp_lista_indirizzi
 		{
 			get
 			{
-				return this.address;
+				return this.street;
 			}
 		}
 
@@ -50,15 +50,6 @@ namespace csharp_lista_indirizzi
 			get
 			{
 				return this.city;
-			}
-		}
-
-		private string country;
-		public string Country
-		{
-			get
-			{
-				return this.country;
 			}
 		}
 
@@ -81,16 +72,31 @@ namespace csharp_lista_indirizzi
 		}
 
 		//CONSTRUCTOR
-		public Address(string name, string surname, string street, string city, string country, string province, int zip)
-		{
+		public Address(string name, string surname, string street, string city, string province, int zip)
+		{			
 			this.name = name;
 			this.surname = surname;
 			this.street = street;
 			this.city = city;
-			this.country = country;
 			this.province = province;
 			this.zip = zip;
 
+		}
+
+		//METHODS
+		public override string ToString()
+		{
+			string stringToWrite;
+			stringToWrite = "------------------------------------------- \n";
+			stringToWrite += $"Name: {this.name} \n";
+			stringToWrite += $"Surname: {this.surname} \n";
+			stringToWrite += $"Street: {this.street } \n";
+			stringToWrite += $"City: {this.city} \n";
+			stringToWrite += $"Province: {this.province} \n";
+			stringToWrite += $"Zip: {this.zip} \n";
+			stringToWrite += "-------------------------------------------";
+
+			return stringToWrite;
 		}
 
 
