@@ -73,7 +73,10 @@ namespace csharp_lista_indirizzi
 
 		//CONSTRUCTOR
 		public Address(string name, string surname, string street, string city, string province, int zip)
-		{			
+		{
+			if ((name == "") || (surname == "") || (street == "")) {
+				throw new Exception("Devi inserire un input valido");
+			}
 			this.name = name;
 			this.surname = surname;
 			this.street = street;
