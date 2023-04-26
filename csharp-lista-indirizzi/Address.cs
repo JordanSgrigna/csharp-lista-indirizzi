@@ -62,8 +62,8 @@ namespace csharp_lista_indirizzi
 			}
 		}
 
-		private int zip;
-		public int Zip
+		private string zip;
+		public string Zip
 		{
 			get
 			{
@@ -72,11 +72,10 @@ namespace csharp_lista_indirizzi
 		}
 
 		//CONSTRUCTOR
-		public Address(string name, string surname, string street, string city, string province, int zip)
+		public Address(string name, string surname, string street, string city, string province, string zip)
 		{
 			if ((name == "") || (surname == "") || (street == ""))
 			{
-
 				string exceptionMessage = "Mancano i parametri ";
 				if (name == "")
 				{
@@ -93,7 +92,7 @@ namespace csharp_lista_indirizzi
 					exceptionMessage += "indirizzo ";
 				}
 
-				throw new Exception(exceptionMessage);
+				throw new ArgumentException(exceptionMessage);
 			}
 
 			this.name = name;
